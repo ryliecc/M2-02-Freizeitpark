@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Aufgabe 1.1 Freizeitpark Daten
+
 let parkName: String = "Syntax Freizeitpark GmbH"
 var isOpen: Bool = true
 let maxGuestNumber: Int = 200
