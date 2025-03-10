@@ -31,3 +31,16 @@ let attraction2: (name: String, capacity: Int, minHeightInM: Double, minAge: Int
 
 let attraction3: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Scream Tower", 16, 1.6, 14, "Adventure Land", "Drop Tower")
 
+
+// Aufgabe 1.4 Einlasskontrolle
+
+func controlParkEntrance(_ guest: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String)) {
+    if (guest.age >= 12 && isOpen && maxGuestNumber > guestNumber) {
+        print("Der Gast \(guest.name) ist \(guest.age) Jahre alt und darf in den Park.")
+    } else {
+        print("Der Gast \(guest.name) darf nicht rein.")
+    }
+}
+
+controlParkEntrance(guest1)
+controlParkEntrance(guest2)
