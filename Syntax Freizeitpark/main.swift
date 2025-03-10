@@ -23,7 +23,11 @@ if (maxGuestNumber == guestNumber) {
 
 let guest1: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String) = ("Miley Cyrus", 32, 1.65, "Mashed Potatoes", "Rollercoaster")
 
-let guest2: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String) = ("Laverne Cox", 52, 1.8, "Beyond Sausage", "Drop Tower")
+let guest2: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String) = ("Laverne Cox", 15, 1.8, "Beyond Sausage", "Drop Tower")
+
+let guest3: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String) = ("Tiny Tim", 9, 1.1, "Cotton Candy", "Carousel")
+
+let guest4: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String) = ("Jada Pinkett Smith", 53, 1.52, "Fruit Bowl", "Boat Ride")
 
 let attraction1: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Donnerfalke", 30, 1.6, 16, "Adventure Land", "Rollercoaster")
 
@@ -38,6 +42,7 @@ func controlParkEntrance(_ guest: (name: String, age: Int, heightInM: Double, fa
     
     if (guest.age >= 12 && isOpen && maxGuestNumber > guestNumber) {
         print("Der Gast \(guest.name) ist \(guest.age) Jahre alt und darf in den Park.")
+        guestNumber += 1
     } else {
         print("Der Gast \(guest.name) darf nicht rein.")
     }
@@ -45,7 +50,9 @@ func controlParkEntrance(_ guest: (name: String, age: Int, heightInM: Double, fa
 }
 
 controlParkEntrance(guest1)
+controlParkEntrance(guest3)
 controlParkEntrance(guest2)
+controlParkEntrance(guest4)
 
 func controlDonnerfalkeEntrace(_ guest: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String)) {
     
@@ -54,11 +61,13 @@ func controlDonnerfalkeEntrace(_ guest: (name: String, age: Int, heightInM: Doub
     } else if (guest.age < 16 && guest.heightInM >= 1.6) {
         print("Der Gast \(guest.name) darf nicht auf den Donnerfalken, weil er erst \(guest.age) Jahre alt ist.")
     } else if (guest.age >= 16 && guest.heightInM < 1.6) {
-        print("Der Gast \(guest.name) darf nicht auf den Donnerfalken, weil er nur \(guest.heightInM)m groß ist.")
+        print("Der Gast \(guest.name) darf nicht auf den Donnerfalken, weil er nur \(guest.heightInM.formatted(.number.precision(.fractionLength(2))))m groß ist.")
     } else {
-        print("Der Gast \(guest.name) darf nicht auf den Donnerfalken, weil er mit \(guest.age) Jahren und \(guest.heightInM)m weder die Mindestanforderungen für das Alter noch für die Körpergröße erfüllt.")
+        print("Der Gast \(guest.name) darf nicht auf den Donnerfalken, weil er mit \(guest.age) Jahren und \(guest.heightInM.formatted(.number.precision(.fractionLength(2))))m weder die Mindestanforderungen für das Alter noch für die Körpergröße erfüllt.")
     }
 }
 
 controlDonnerfalkeEntrace(guest1)
 controlDonnerfalkeEntrace(guest2)
+controlDonnerfalkeEntrace(guest3)
+controlDonnerfalkeEntrace(guest4)
