@@ -8,6 +8,6 @@
 import Foundation
 
 let parkName: String = "Syntax Freizeitpark GmbH"
-var isOpen: Bool = false
+var isOpen: Bool = true
 let maxGuestNumber: Int = 200
-var guestNumber: Int = 0
+var guestNumber: Int = 112
