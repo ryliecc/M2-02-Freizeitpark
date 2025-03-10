@@ -17,3 +17,17 @@ if (maxGuestNumber == guestNumber) {
 } else {
     print("Treten Sie ein!")
 }
+
+
+// Aufgabe 1.3 Besucherdaten und Attraktionsdaten
+
+let guest1: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String) = ("Miley Cyrus", 32, 1.65, "Mashed Potatoes", "Rollercoaster")
+
+let guest2: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String) = ("Laverne Cox", 52, 1.8, "Beyond Sausage", "Drop Tower")
+
+let attraction1: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Donnerfalke", 30, 1.6, 16, "Adventure Land", "Rollercoaster")
+
+let attraction2: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Odyssey", 8, 1.2, 8, "Greek Islands", "Boat Ride")
+
+let attraction3: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Scream Tower", 16, 1.6, 14, "Adventure Land", "Drop Tower")
+
