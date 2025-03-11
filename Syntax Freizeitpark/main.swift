@@ -37,14 +37,19 @@ let attraction3: (name: String, capacity: Int, minHeightInM: Double, minAge: Int
 
 
 // Aufgabe 1.4 Einlasskontrolle
+// Aufgabe 1.5 Begründung
 
 func controlParkEntrance(_ guest: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String)) {
     
-    if (guest.age >= 12 && isOpen && maxGuestNumber > guestNumber) {
+    if (!isOpen) {
+        print("Der Gast \(guest.name) darf nicht in den Park, weil der Park noch nicht geöffnet ist.")
+    } else if (guest.age >= 12 && maxGuestNumber > guestNumber) {
         print("Der Gast \(guest.name) ist \(guest.age) Jahre alt und darf in den Park.")
         guestNumber += 1
-    } else {
-        print("Der Gast \(guest.name) darf nicht rein.")
+    } else if (guest.age < 12 && maxGuestNumber > guestNumber) {
+        print("Der Gast \(guest.name) ist erst \(guest.age) Jahre alt und darf deswegen nicht in den Park.")
+    } else if (maxGuestNumber <= guestNumber) {
+        print("Der Gast \(guest.name) darf nicht in den Park, weil der Park bereits voll ist.")
     }
     
 }
