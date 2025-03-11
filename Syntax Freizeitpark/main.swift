@@ -94,12 +94,10 @@ controlParkEntrance(guest1)
 
 // Aufgabe 2.1 Gäste begrüßen
 
-var guests = guestNumber
-var guestCounter = 0
+var guestCounter = 1
 
-while guests > 0 {
-    guestCounter += 1
+while guestCounter <= guestNumber {
     print("Lieber Gast #\(guestCounter), herzlich Willkommen im Syntax Freizeitpark!")
-    guests -= 1
+    guestCounter += 1
 }
 
