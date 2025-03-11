@@ -101,3 +101,25 @@ while guestCounter <= guestNumber {
     guestCounter += 1
 }
 
+// Aufgabe 2.2 Verlauf des Tages
+
+while guestNumber > 0 {
+    if (guestNumber > 1) {
+        print("Es sind \(guestNumber) Gäste da.")
+    } else {
+        print("Es ist 1 Gast da.")
+    }
+    
+    let randomNumber = Int.random(in: 1...3)
+    if (randomNumber == 1) {
+        guestNumber += 1
+    } else {
+        if (guestNumber > 1) {
+            guestNumber -= 2
+        } else {
+            guestNumber = 0
+        }
+    }
+}
+
+print("Der Park hat geschlossen.")
