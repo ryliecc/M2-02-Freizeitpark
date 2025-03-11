@@ -123,3 +123,34 @@ while guestNumber > 0 {
 }
 
 print("Der Park hat geschlossen.")
+
+// Aufgabe 2.3 Verlauf des Tages (Fortgeschritten)
+
+guestNumber = 19
+
+while true {
+    if (guestNumber % 2 == 0) {
+        var randomNumber = Int.random(in: 1...3)
+        if (guestNumber >= randomNumber) {
+            guestNumber -= randomNumber
+        } else {
+            randomNumber = guestNumber
+            guestNumber = 0
+        }
+        if (randomNumber > 1) {
+            print("Es haben \(randomNumber) Gäste den Park verlassen.")
+        } else {
+            print("Es hat ein Gast den Park verlassen.")
+        }
+        
+    } else if (guestNumber % 2 == 1 && guestNumber < maxGuestNumber) {
+        guestNumber += 1
+        print("Es hat ein weiterer Gast den Park betreten.")
+    }
+    
+    if (guestNumber == 0) {
+        break
+    }
+}
+
+print("Es haben alle Gäste den Park verlassen.")
