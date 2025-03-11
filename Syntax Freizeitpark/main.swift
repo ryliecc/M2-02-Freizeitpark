@@ -29,11 +29,11 @@ let guest3: (name: String, age: Int, heightInM: Double, favoriteFood: String, fa
 
 let guest4: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String, isVip: Bool) = ("Jada Pinkett Smith", 53, 1.52, "Fruit Bowl", "Boat Ride", false)
 
-let attraction1: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Donnerfalke", 30, 1.6, 16, "Adventure Land", "Rollercoaster")
+let attraction1: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String, price: Double) = ("Donnerfalke", 30, 1.6, 16, "Adventure Land", "Rollercoaster", 3.50)
 
-let attraction2: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Odyssey", 8, 1.2, 8, "Greek Islands", "Boat Ride")
+let attraction2: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String, price: Double) = ("Odyssey", 8, 1.2, 8, "Greek Islands", "Boat Ride", 4.99)
 
-let attraction3: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String) = ("Scream Tower", 16, 1.6, 14, "Adventure Land", "Drop Tower")
+let attraction3: (name: String, capacity: Int, minHeightInM: Double, minAge: Int, location: String, category: String, price: Double) = ("Scream Tower", 16, 1.6, 14, "Adventure Land", "Drop Tower", 2.75)
 
 
 // Aufgabe 1.4 Einlasskontrolle
@@ -111,6 +111,7 @@ while guestNumber > 0 {
     } else {
         guestNumber = max(0, guestNumber - 2)
     }
+    // Aufgabe 2.4 Lesbarkeit der Konsolenausgabe
     sleep(1)
 }
 
@@ -119,12 +120,14 @@ print("Der Park hat geschlossen.")
 // Aufgabe 2.3 Verlauf des Tages (Fortgeschritten)
 
 guestNumber = 19
+var salesVolume: Double = 0.00
+let attractions = [attraction1, attraction2, attraction3]
 
 while true {
     if (guestNumber % 2 == 0) {
-        let randomNumber = min(Int.random(in: 1...3), guestNumber)
-        guestNumber -= randomNumber
-        print(randomNumber > 1 ? "Es haben \(randomNumber) Gäste den Park verlassen." : "Es hat ein Gast den Park verlassen.")
+        let randomGuestNumber = min(Int.random(in: 1...3), guestNumber)
+        guestNumber -= randomGuestNumber
+        print(randomGuestNumber > 1 ? "Es haben \(randomGuestNumber) Gäste den Park verlassen." : "Es hat ein Gast den Park verlassen.")
         
     } else if (guestNumber % 2 == 1 && guestNumber < maxGuestNumber) {
         guestNumber += 1
@@ -134,7 +137,16 @@ while true {
     if (guestNumber == 0) {
         break
     }
+    
+    // Aufgabe 2.5 Tagesumsatz
+    
+    let randomAttraction = attractions.randomElement()!
+    let randomAttractionGuestNumber = Int.random(in: 0...min(randomAttraction.capacity, guestNumber))
+    salesVolume += randomAttraction.price * Double(randomAttractionGuestNumber)
+    
+    // Aufgabe 2.4 Lesbarkeit der Konsolenausgabe
+    
     sleep(1)
 }
 
-print("Es haben alle Gäste den Park verlassen.")
+print("Es haben alle Gäste den Park verlassen. Der Tagesumsatz beträgt \(salesVolume.formatted(.number.precision(.fractionLength(2))))€.")
