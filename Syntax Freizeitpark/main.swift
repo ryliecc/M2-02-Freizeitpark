@@ -53,6 +53,7 @@ func controlParkEntrance(_ guest: (name: String, age: Int, heightInM: Double, fa
         print("Der Gast \(guest.name) darf nicht in den Park, weil der Park bereits voll ist.")
     } else if (guest.isVip) {
         print("Der Gast \(guest.name) ist ein VIP und darf in den Park.")
+        guestNumber += 1
     }
     
 }
@@ -90,3 +91,15 @@ print("Bitte gib true ein, falls du ein VIP bist und false, wenn du keiner bist.
 guest1.isVip = Bool(readLine()!)!
 print("Es wird nun geprüft, ob du eingelassen wirst.")
 controlParkEntrance(guest1)
+
+// Aufgabe 2.1 Gäste begrüßen
+
+var guests = guestNumber
+var guestCounter = 0
+
+while guests > 0 {
+    guestCounter += 1
+    print("Lieber Gast #\(guestCounter), herzlich Willkommen im Syntax Freizeitpark!")
+    guests -= 1
+}
+
