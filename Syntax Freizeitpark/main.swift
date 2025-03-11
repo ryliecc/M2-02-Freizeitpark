@@ -104,22 +104,14 @@ while guestCounter <= guestNumber {
 // Aufgabe 2.2 Verlauf des Tages
 
 while guestNumber > 0 {
-    if (guestNumber > 1) {
-        print("Es sind \(guestNumber) Gäste da.")
-    } else {
-        print("Es ist 1 Gast da.")
-    }
-    
+    print(guestNumber > 1 ? "Es sind \(guestNumber) Gäste da." : "Es ist 1 Gast da.")
     let randomNumber = Int.random(in: 1...3)
     if (randomNumber == 1) {
         guestNumber += 1
     } else {
-        if (guestNumber > 1) {
-            guestNumber -= 2
-        } else {
-            guestNumber = 0
-        }
+        guestNumber = max(0, guestNumber - 2)
     }
+    sleep(1)
 }
 
 print("Der Park hat geschlossen.")
@@ -130,18 +122,9 @@ guestNumber = 19
 
 while true {
     if (guestNumber % 2 == 0) {
-        var randomNumber = Int.random(in: 1...3)
-        if (guestNumber >= randomNumber) {
-            guestNumber -= randomNumber
-        } else {
-            randomNumber = guestNumber
-            guestNumber = 0
-        }
-        if (randomNumber > 1) {
-            print("Es haben \(randomNumber) Gäste den Park verlassen.")
-        } else {
-            print("Es hat ein Gast den Park verlassen.")
-        }
+        let randomNumber = min(Int.random(in: 1...3), guestNumber)
+        guestNumber -= randomNumber
+        print(randomNumber > 1 ? "Es haben \(randomNumber) Gäste den Park verlassen." : "Es hat ein Gast den Park verlassen.")
         
     } else if (guestNumber % 2 == 1 && guestNumber < maxGuestNumber) {
         guestNumber += 1
@@ -151,6 +134,7 @@ while true {
     if (guestNumber == 0) {
         break
     }
+    sleep(1)
 }
 
 print("Es haben alle Gäste den Park verlassen.")
