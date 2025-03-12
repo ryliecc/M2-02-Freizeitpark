@@ -150,3 +150,28 @@ while true {
 }
 
 print("Es haben alle Gäste den Park verlassen. Der Tagesumsatz beträgt \(salesVolume.formatted(.number.precision(.fractionLength(2))))€.")
+
+// Aufgabe 3.1 Softeisstand
+
+print("Ein Softeis, sehr gerne!")
+print("Bitte gib für die folgenden Fragen true ein für Ja und false für Nein.")
+
+print("Soll es eine große Portion sein?")
+var isBigPortion: Bool = Bool(readLine()!)!
+print(isBigPortion ? "Eine große Eiswaffel wird befüllt." : "Eine kleine Eiswaffel wird befüllt.")
+
+print("Wollen Sie Soße?")
+var isWithSauce: Bool = Bool(readLine()!)!
+if (isWithSauce) {
+    print("Das Eis wird mit Soße beträufelt.")
+}
+
+print("Wollen Sie Streusel?")
+var isWithSprinkles: Bool = Bool(readLine()!)!
+if (isWithSprinkles) {
+    print("Das Eis wird mit Streuseln verziert.")
+}
+
+print("Das Softeis ist fertig. Guten Appetit!")
+
+
