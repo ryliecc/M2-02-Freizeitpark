@@ -174,4 +174,20 @@ if (isWithSprinkles) {
 
 print("Das Softeis ist fertig. Guten Appetit!")
 
+// Aufgabe 3.2 Achterbahnfahrten
 
+var waitingGuests: Int = 50
+
+while waitingGuests >= 20 {
+    waitingGuests -= 20
+    print("Die nächste Fahrt geht los!")
+    let randomNumber: Int = Int.random(in: 1...3)
+    if randomNumber % 2 == 0 {
+        waitingGuests += 30
+    } else {
+        waitingGuests += 5
+    }
+}
+
+print("Die letzte Fahrt des Tages startet!")
+print("Die Achterbahn ist geschlossen.")
