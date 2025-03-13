@@ -82,4 +82,4 @@ handleRollercoasterManually()
 
 // Aufgabe 4.2 Rechner für das Personal
 
-print(addPrices(price1: 3.79, price2: 2.49))
+print("Die Gesamtsumme zu bezahlen beträgt \(addPrices(price1: 3.79, price2: 2.49))€.")

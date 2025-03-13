@@ -9,6 +9,8 @@ import Foundation
 
 // Aufgabe 4.1 Code aufräumen
 
+// Aufgabe 1.2 Freizeitpark Status
+
 func checkStatus() -> String {
     if isOpen {
         return "Herzlich willkommen im Syntax Freizeitpark! Du bist der \(guestNumber + 1). Gast!"
@@ -26,6 +28,9 @@ func checkIfFull() -> String {
     }
 }
 
+// Aufgabe 1.4 Einlasskontrolle
+// Aufgabe 1.5 Begründung
+// Aufgabe 1.6 VIP-Liste
 
 func controlParkEntrance(_ guest: (name: String, age: Int, heightInM: Double, favoriteFood: String, favoriteAttraction: String, isVip: Bool)) -> String {
     
@@ -63,6 +68,8 @@ func controlDonnerfalkeEntrace(_ guest: (name: String, age: Int, heightInM: Doub
     }
 }
 
+// Aufgabe 2.1 Gäste begrüßen
+
 var guestCounter = 1
 
 func greetGuests() {
@@ -71,6 +78,8 @@ func greetGuests() {
         guestCounter += 1
     }
 }
+
+// Aufgabe 2.2 Verlauf des Tages
 
 func checkSimpleDayProgress() {
     while guestNumber > 0 {
@@ -87,6 +96,8 @@ func checkSimpleDayProgress() {
 
     print("Der Park hat geschlossen.")
 }
+
+// Aufgabe 2.3 Verlauf des Tages (Fortgeschritten)
 
 var salesVolume: Double = 0.00
 let attractions = [attraction1, attraction2, attraction3]
@@ -122,28 +133,32 @@ func checkAdvancedDayProgress() {
     print("Es haben alle Gäste den Park verlassen. Der Tagesumsatz beträgt \(salesVolume.formatted(.number.precision(.fractionLength(2))))€.")
 }
 
+// Aufgabe 3.1 Softeisstand inkl. Aufgabe 3.6
+
 func makeIceCream() {
     print("Ein Softeis, sehr gerne!")
     print("Bitte gib für die folgenden Fragen true ein für Ja und false für Nein.")
 
     print("Soll es eine große Portion sein?")
-    var isBigPortion: Bool = Bool(readLine()!)!
+    let isBigPortion: Bool = Bool(readLine()!)!
     print(isBigPortion ? "Eine große Eiswaffel wird befüllt." : "Eine kleine Eiswaffel wird befüllt.")
 
     print("Wollen Sie Soße?")
-    var isWithSauce: Bool = Bool(readLine()!)!
+    let isWithSauce: Bool = Bool(readLine()!)!
     if (isWithSauce) {
         print("Das Eis wird mit Soße beträufelt.")
     }
 
     print("Wollen Sie Streusel?")
-    var isWithSprinkles: Bool = Bool(readLine()!)!
+    let isWithSprinkles: Bool = Bool(readLine()!)!
     if (isWithSprinkles) {
         print("Das Eis wird mit Streuseln verziert.")
     }
 
     print("Das Softeis ist fertig. Guten Appetit!")
 }
+
+// Aufgabe 3.2 Achterbahnfahrten
 
 var waitingGuests: Int = 50
 
@@ -162,6 +177,8 @@ func handleRollercoasterRandomly() {
     print("Die letzte Fahrt des Tages startet!")
     print("Die Achterbahn ist geschlossen.")
 }
+
+// Aufgabe 3.5 Eingabe statt Zufall bei Achterbahnfahrten
 
 func handleRollercoasterManually() {
     print("Wieviel Gäste warten aktuell für die Achterbahn?")
