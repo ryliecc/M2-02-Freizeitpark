@@ -152,6 +152,7 @@ while true {
 print("Es haben alle Gäste den Park verlassen. Der Tagesumsatz beträgt \(salesVolume.formatted(.number.precision(.fractionLength(2))))€.")
 
 // Aufgabe 3.1 Softeisstand
+// anscheinend unwissentlich bereits auch schon 3.6 mitgelöst :)
 
 print("Ein Softeis, sehr gerne!")
 print("Bitte gib für die folgenden Fragen true ein für Ja und false für Nein.")
