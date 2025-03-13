@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Aufgabe 4.1 Code aufräumen
+
 func checkStatus() -> String {
     if isOpen {
         return "Herzlich willkommen im Syntax Freizeitpark! Du bist der \(guestNumber + 1). Gast!"
