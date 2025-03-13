@@ -192,3 +192,22 @@ while waitingGuests >= 20 {
 
 print("Die letzte Fahrt des Tages startet!")
 print("Die Achterbahn ist geschlossen.")
+
+// Aufgabe 3.5 Eingabe statt Zufall bei Achterbahnfahrten
+
+print("Wieviel Gäste warten aktuell für die Achterbahn?")
+waitingGuests = Int(readLine()!)!
+
+while waitingGuests >= 20 {
+    print("Wieviele Gäste haben die Warteschlange verlassen?")
+    let leavingGuests: Int = Int(readLine()!)!
+    waitingGuests -= leavingGuests
+    print("Die nächste Fahrt geht los!")
+    print("Wieviele Gäste haben sich neu angestellt?")
+    let newGuests: Int = Int(readLine()!)!
+    waitingGuests += newGuests
+    
+}
+
+print("Die letzte Fahrt des Tages startet!")
+print("Die Achterbahn ist geschlossen.")
