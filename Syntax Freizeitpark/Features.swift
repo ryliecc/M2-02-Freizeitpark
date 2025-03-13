@@ -182,3 +182,9 @@ func handleRollercoasterManually() {
     print("Die Achterbahn ist geschlossen.")
 
 }
+
+// Aufgabe 4.2 Rechner für das Personal
+
+func addPrices(price1: Double, price2: Double) -> Double {
+    return price1 + price2
+}

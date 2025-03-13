@@ -79,3 +79,7 @@ handleRollercoasterRandomly()
 // Aufgabe 3.5 Eingabe statt Zufall bei Achterbahnfahrten
 
 handleRollercoasterManually()
+
+// Aufgabe 4.2 Rechner für das Personal
+
+print(addPrices(price1: 3.79, price2: 2.49))
