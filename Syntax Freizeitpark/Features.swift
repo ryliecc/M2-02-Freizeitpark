@@ -181,7 +181,7 @@ func handleRollercoasterRandomly() {
 // Aufgabe 3.5 Eingabe statt Zufall bei Achterbahnfahrten
 
 func handleRollercoasterManually() {
-    print("Wieviel Gäste warten aktuell für die Achterbahn?")
+    print("Wieviele Gäste warten aktuell für die Achterbahn?")
     waitingGuests = Int(readLine()!)!
 
     while waitingGuests >= 20 {
